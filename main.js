@@ -1,10 +1,36 @@
 "use strict";
 
-let $ = require("http://.....jquery")
+document.write('	<section id="feedback-panel">\
+		Here is some font.<br>\
+		<br>\
+		Enter some background color: <input id="bg" type="text"><br>\
+		<br>\
+		Enter some text color: <input id="fg" type="text"><br>\
+		<br>\
+		Do you like reading the color combination you see here? (click yes or no below)<br>\
+		<button id="yes" type="button">Yes!</button>\
+		<button id="no" type="button">No!</button>\
+	</section>\
+	<section id="predict-panel">\
+		Here is some font.<br>\
+		<br>\
+		Enter some background color: <input id="bg" type="text"><br>\
+		<br>\
+		Enter some text color: <input id="fg" type="text"><br>\
+		<br>\
+		The probability that the user likes reading this color combination is:<br>\
+		<input type="text" val="50%">\
+	</section>\
+')
+
+require("./profile.js")
+let $ = require("jquery")
 let Color = require("color")
 
 function verify(color) {
-	if( color_point.constructor === "Color" ){
+
+	logj(color.constructor)
+	if( color.constructor === "Color" ){ NOT WORKING.  HOW DO WE CHECK ITS a COLOR???
 		return true
 	}else{
 		die('Parameter should be an instance of Color.')
@@ -95,7 +121,7 @@ $('#bg').keyup(function(e){ if( e.keyCode === 13 /*Enter*/ ){
 	let bg_color_val = $('#bg').val()
 	current_bg_color = Color(bg_color_val) // verify that the color is legal
 		// if not legal, put error message and:
-		current_bg_color = null // if necessary
+		// current_bg_color = null // if necessary
 	$('body').css('background-color', bg_color_val)
 }})
 $('#fg').keyup(function(e){ if( e.keyCode === 13 /*Enter*/ ){
