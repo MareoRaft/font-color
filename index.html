@@ -3,14 +3,37 @@
 <head>
 	<meta charset='UTF-8'>
 	<title></title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.js" data-main="main"></script>
+	<style>
+		#feedback-panel {
+			float: left;
+		}
+		#predict-panel {
+			float: right;
+		}
+	</style>
+	<script src="bundle.js"></script>
  </head>
 <body>
-	Here is some font.<br>
-	<br>
-	Enter some background color: <input id='bg' type="text"><br>
-	<br>
-	Enter some text color: <input id='fg' type="text"><br>
-
+	<section id='feedback-panel'>
+		Here is some font.<br>
+		<br>
+		Enter some background color: <input id='bg' type="text"><br>
+		<br>
+		Enter some text color: <input id='fg' type="text"><br>
+		<br>
+		Do you like reading the color combination you see here? (click yes or no below)<br>
+		<button id="yes" type="button">Yes!</button>
+		<button id="no" type="button">No!</button>
+	</section>
+	<section id='predict-panel'>
+		Here is some font.<br>
+		<br>
+		Enter some background color: <input id='bg' type="text"><br>
+		<br>
+		Enter some text color: <input id='fg' type="text"><br>
+		<br>
+		The probability that the user likes reading this color combination is:<br>
+		<input type="text" val="50%">
+	</section>
 </body>
 </html>
